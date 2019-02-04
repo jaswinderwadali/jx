@@ -5,7 +5,6 @@
 
     <data>
 
-
         <variable
             name="mainAdapter"
             type="jx.hello.adapters.MainAdapter" />
@@ -35,35 +34,36 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:adapter="@{mainAdapter}"
-            app:layoutManager="@{layoutManager}"
-            app:max_visible="4"
-            app:min_adapter_stack="6"
-            app:rotation_degrees="16" />
+            app:layoutManager="@{layoutManager}" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="@{(view) -> stackView.swipe()}"
-                android:src="@mipmap/ic_launcher" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="56dp"
                 android:layout_weight="1"
                 android:onClick="@{(view) -> stackView.rewind()}"
-                android:src="@mipmap/ic_launcher" />
+                android:rotation="180"
+                app:srcCompat="@drawable/next" />
+
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:onClick="@{(view) -> stackView.swipe()}"
+                app:srcCompat="@drawable/next" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
                 android:layout_weight="1"
                 android:onClick="@{(view) -> mainAdapter.notifyDataSetChanged()}"
-                android:src="@mipmap/ic_launcher" />
+                android:padding="5dp"
+                app:srcCompat="@drawable/refresh" />
 
         </LinearLayout>
 
