@@ -1,5 +1,6 @@
 package jx.hello.viewmodel;
 
+import android.annotation.SuppressLint;
 import android.arch.lifecycle.ViewModel;
 
 import java.util.ArrayList;
@@ -17,6 +18,12 @@ public class MainViewModel extends ViewModel {
 
     public List<String> getDummyData() {
         return dummyData;
+    }
+
+    @SuppressLint("DefaultLocale")
+    public String cardNumber(int position) {
+        position = 1 + position;
+        return String.format("%d/%d", position, dummyData.size());
     }
 
 

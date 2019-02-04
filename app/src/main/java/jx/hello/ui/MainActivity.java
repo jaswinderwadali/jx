@@ -10,6 +10,7 @@ import com.yuyakaido.android.cardstackview.CardStackLayoutManager;
 import jx.hello.R;
 import jx.hello.adapters.MainAdapter;
 import jx.hello.databinding.ActivityMainBinding;
+import jx.hello.utils.LinePagerIndicatorDecoration;
 import jx.hello.viewmodel.MainViewModel;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,12 +24,10 @@ public class MainActivity extends AppCompatActivity {
         mViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         mViewModel.init();
         activityBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        activityBinding.setActivity(this);
         activityBinding.setLayoutManager(new CardStackLayoutManager(this));
         activityBinding.setMainAdapter(new MainAdapter(mViewModel));
+        activityBinding.stackView.addItemDecoration(new LinePagerIndicatorDecoration());
     }
-
-
 
 
 }

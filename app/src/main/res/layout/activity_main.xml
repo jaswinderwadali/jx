@@ -13,10 +13,6 @@
             name="layoutManager"
             type="com.yuyakaido.android.cardstackview.CardStackLayoutManager" />
 
-        <variable
-            name="activity"
-            type="jx.hello.ui.MainActivity" />
-
 
     </data>
 
@@ -35,6 +31,7 @@
             android:layout_weight="1"
             android:adapter="@{mainAdapter}"
             app:layoutManager="@{layoutManager}" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
